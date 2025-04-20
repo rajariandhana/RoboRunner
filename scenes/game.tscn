@@ -1,17 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://eu4jb4g0l8wb"]
+[gd_scene load_steps=5 format=3 uid="uid://eu4jb4g0l8wb"]
 
 [ext_resource type="PackedScene" uid="uid://ecytbli35ftq" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dsuwk0oxrqxgk" path="res://scenes/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://g8kt57ha300c" path="res://scenes/ground.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cxcgnl16ua6wu" path="res://scenes/enemy.tscn" id="6_p57ef"]
 
 [node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_yqjtg")
 
-[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+[node name="Ground1" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(75, 0)
 
-[node name="Ground" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(104, 16)
+[node name="Ground2" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(491, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(59, -18)
-zoom = Vector2(5, 5)
+position = Vector2(0, -18)
+zoom = Vector2(7, 7)
+
+[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(-66, -14)
+
+[node name="Area2D" parent="." instance=ExtResource("6_p57ef")]
+position = Vector2(116, -10)
