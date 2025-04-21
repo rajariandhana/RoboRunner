@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bh0dvjs384ktx"]
+
+[ext_resource type="PackedScene" uid="uid://cxcgnl16ua6wu" path="res://scenes/enemy.tscn" id="1_y8hla"]
+[ext_resource type="Texture2D" uid="uid://b7rqf0r7h6ahs" path="res://assets/sprites/rocket.png" id="2_r4jk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4jk5"]
+size = Vector2(12, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh0nr"]
+atlas = ExtResource("2_r4jk5")
+region = Rect2(0, 0, 20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwbpy"]
+atlas = ExtResource("2_r4jk5")
+region = Rect2(0, 11, 20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrsvi"]
+atlas = ExtResource("2_r4jk5")
+region = Rect2(0, 22, 20, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0nnqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh0nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwbpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrsvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwbpy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" instance=ExtResource("1_y8hla")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_r4jk5")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_0nnqw")
+autoplay = "default"
+frame_progress = 0.0120036

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://djrwubi7ddst0"]
+
+[ext_resource type="PackedScene" uid="uid://cxcgnl16ua6wu" path="res://scenes/enemy.tscn" id="1_0imbo"]
+[ext_resource type="Texture2D" uid="uid://cjm2t4otexj1q" path="res://assets/sprites/entities-1.png" id="2_0lbno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lbno"]
+size = Vector2(10, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o35sf"]
+atlas = ExtResource("2_0lbno")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wl1x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o35sf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Area2D" instance=ExtResource("1_0imbo")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_0lbno")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_0wl1x")

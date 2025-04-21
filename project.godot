@@ -15,6 +15,12 @@ run/main_scene="uid://eu4jb4g0l8wb"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="Ground"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

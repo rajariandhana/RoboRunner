@@ -1,15 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxcgnl16ua6wu"]
+[gd_scene load_steps=2 format=3 uid="uid://cxcgnl16ua6wu"]
 
 [ext_resource type="Script" uid="uid://btvm25xvnj3ou" path="res://scripts/enemy.gd" id="1_7p1mj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tegq"]
 
 [node name="Area2D" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_7p1mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8tegq")
-debug_color = Color(0.992157, 0, 0, 0.560784)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

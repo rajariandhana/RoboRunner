@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://df67n73fvgixq"]
+
+[ext_resource type="PackedScene" uid="uid://cxcgnl16ua6wu" path="res://scenes/enemy.tscn" id="1_55615"]
+[ext_resource type="Texture2D" uid="uid://d2rib5haproc2" path="res://assets/sprites/blade.png" id="2_1wm4q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wm4q"]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jabvx"]
+atlas = ExtResource("2_1wm4q")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xx04"]
+atlas = ExtResource("2_1wm4q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbj4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jabvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xx04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" instance=ExtResource("1_55615")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_1wm4q")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_vbj4d")
+autoplay = "default"
+frame = 1
+frame_progress = 0.36757

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://eu4jb4g0l8wb"]
+[gd_scene load_steps=7 format=3 uid="uid://eu4jb4g0l8wb"]
 
 [ext_resource type="PackedScene" uid="uid://ecytbli35ftq" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dsuwk0oxrqxgk" path="res://scenes/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://g8kt57ha300c" path="res://scenes/ground.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cxcgnl16ua6wu" path="res://scenes/enemy.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bh0dvjs384ktx" path="res://scenes/enemy_rocket.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://df67n73fvgixq" path="res://scenes/enemy_blade.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://djrwubi7ddst0" path="res://scenes/enemy_spike.tscn" id="6_p57ef"]
 
 [node name="Game" type="Node2D"]
 
@@ -24,5 +26,20 @@ zoom = Vector2(7, 7)
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(-66, -14)
 
-[node name="Area2D" parent="." instance=ExtResource("6_p57ef")]
-position = Vector2(116, -10)
+[node name="Area2D" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(35, -12)
+
+[node name="Area2D2" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(107, -7)
+
+[node name="Area2D3" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(94, -24)
+
+[node name="Area2D4" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(140, -27)
+
+[node name="Area2D5" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(13, -45)
+
+[node name="Area2D6" parent="." instance=ExtResource("6_p57ef")]
+position = Vector2(54, -8)
