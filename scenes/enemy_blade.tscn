@@ -29,6 +29,7 @@ animations = [{
 }]
 
 [node name="Area2D" instance=ExtResource("1_55615")]
+enemy_name = "Blade"
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_1wm4q")

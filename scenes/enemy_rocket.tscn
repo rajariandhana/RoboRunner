@@ -39,6 +39,7 @@ animations = [{
 }]
 
 [node name="Area2D" instance=ExtResource("1_y8hla")]
+enemy_name = "Rocket"
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-3, 0)
