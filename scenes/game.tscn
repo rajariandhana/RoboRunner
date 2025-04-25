@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://eu4jb4g0l8wb"]
+[gd_scene load_steps=7 format=3 uid="uid://eu4jb4g0l8wb"]
 
 [ext_resource type="PackedScene" uid="uid://ecytbli35ftq" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dsuwk0oxrqxgk" path="res://scenes/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://g8kt57ha300c" path="res://scenes/ground.tscn" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://bhdwehsgsbaxx" path="res://scripts/stop_watch.gd" id="5_iywne"]
+[ext_resource type="FontFile" uid="uid://xjcsbs3j5fpo" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://by3jvrxmonp55" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [node name="Game" type="Node2D"]
@@ -73,3 +74,36 @@ theme_override_fonts/font = ExtResource("7_u5sy4")
 theme_override_font_sizes/font_size = 8
 text = "00"
 horizontal_alignment = 2
+
+[node name="MainMenu" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -64.0
+offset_right = -82.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="MainMenu"]
+layout_mode = 2
+offset_left = 49.0
+offset_top = 19.0
+offset_right = 129.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "RoboRunner"
+horizontal_alignment = 1
+
+[node name="Instruction" type="Label" parent="MainMenu"]
+layout_mode = 2
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 144.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "press space to play"
+horizontal_alignment = 1

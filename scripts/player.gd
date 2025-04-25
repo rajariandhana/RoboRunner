@@ -3,14 +3,23 @@ class_name Player
 
 const JUMP_VELOCITY = -250
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+#@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@export var animated_sprite_2d:AnimatedSprite2D
 @onready var collision_run: CollisionShape2D = $CollisionRun
 @onready var collision_jump: CollisionShape2D = $CollisionJump
 
+var isRunning:bool
+
 func _ready() -> void:
+	#await get_tree().create_timer(1).timeout
+	collision_run.disabled = true
+	collision_jump.disabled = true
 	print("Hello woarld")
+	animated_sprite_2d = get_node("AnimatedSprite2D")
 
 func _physics_process(delta: float) -> void:
+	if !isRunning:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -34,9 +43,20 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("DEATH FOR YOU!")
+func set_frame(frame: int):
+	#animated_sprite_2d.sprite_frames.set_animation_speed("run",frame)
+	pass
 
+func increase_frame(frame: int):
+	#var oldFrame = animated_sprite_2d.sprite_frames.get_animation_speed("run")
+	#animated_sprite_2d.sprite_frames.set_animation_speed("run", oldFrame+5)
+	pass
+	
+func play():
+	isRunning = true
+	collision_run.disabled = false
+	collision_jump.disabled = true
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("DEATH FOR YOsdsdU!")
+func stop():
+	isRunning = false
+	animated_sprite_2d.stop()

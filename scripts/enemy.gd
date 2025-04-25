@@ -26,5 +26,7 @@ func _process(delta: float) -> void:
 		#game_manager.add_score(1)
 
 func _on_body_entered(body: Node2D) -> void:
-	print("DEATH CAUSE: collide with "+name)
-	get_tree().paused = true
+	print("DEATH CAUSE: collide with "+enemy_name)
+	VELOCITY = 0
+	game_manager.end()
+	animated_sprite_2d.stop()
